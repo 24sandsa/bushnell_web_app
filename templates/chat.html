@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/sakura.css">
+  <title>Responses</title>
+</head>
+<body>
+  <div name="header", id="header">
+    <h1>Bushnell GPT-3.5 Persona Demo</h1>
+  </div>
+  <form action="/chat" method="POST" autocomplete="off">
+    <input type="text" name="user_prompt">
+    <input type="submit" value="Ask">
+    <div class="chat-container">
+      {% for entry in chat_history %}
+          <p class="user-message">You: {{ entry.user }}</p>
+          <p class="chatbot-message">Abraham Lincoln: {{ entry.chatbot }}</p>
+      {% endfor %}
+  </div>
+  </form>
+</body>
+</html>
